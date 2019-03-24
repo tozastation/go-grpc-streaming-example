@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package music;
+
+service Music {
+    rpc Start(Empty) returns(stream StreamingMusic) {}
+}
+
+message Empty {}
+
+message StreamingMusic {
+    bytes data = 1;
+}
